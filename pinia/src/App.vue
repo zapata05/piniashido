@@ -1,38 +1,21 @@
-<script setup>
 
-import { usedefineStore } from './stores/pinia';
-import {ref} from "vue";
-const store = usedefineStore();
-const nameInput =ref("");
-const nameInput2 =ref("");
-const nombre = () =>{
-    store.changename(nameInput.value);
-    nameInput.value="";
-  }
-  const epellido = () =>  {
-    store.apellido(nameInput2.value);
-    nameInput2.value="";
-  }
+
+<script setup>
+import { RouterLink } from 'vue-router';
  </script>
 
 <template>
- <div> 
-  <h1>yo soy {{store.user.name}} {{ store.user.lastmae }}</h1> 
-  <h2>mi email {{ store.user.email }}</h2>
-<H2>website is {{ store.website }}</H2></div>
- <div> <input type="text"
-  placeholder="nuevo nombre"
-  v-model="nameInput"
-  >  
-  <button @click="nombre">agregame</button></div>
-
- <div> <input type="text"
-  placeholder="apellido"
-  v-model="nameInput2"
-  >
-
-  <button @click="epellido">apellido</button></div>
+  <div>
+    <div style="display: flex; justify-content: center;">
+      <RouterLink to="/">cotadores</RouterLink>/
+      <RouterLink to="/about">usuario</RouterLink>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <RouterView></RouterView>
+    </div>
+  </div>
 </template>
+
 
 
 <style scoped>
