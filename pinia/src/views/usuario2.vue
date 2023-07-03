@@ -1,5 +1,7 @@
 <script setup>
 import {ref,computed} from 'vue'
+import {usedefineStore} from '@/stores/usuario2'
+const elpep = usedefineStore ()
 const numero = ref(0)
 const s = () =>{
     numero.value++
@@ -21,11 +23,11 @@ const resetear = () =>{
 <template>
     <div class="container">
         <div class="numero">
-            {{ numero }}
+            {{ elpep.numero }}
         </div>
         <div class="botones">
-            <button @click="r">-</button>
-            <button @click="s">+</button>
+            <button @click="usar.res">-</button>
+            <button @click="usar.sum">+</button>
             <button @click="resetear">resetear</button>
         </div>
         <hr>
@@ -34,6 +36,3 @@ const resetear = () =>{
         </div>
     </div>
 </template>
-<style>
-
-</style>

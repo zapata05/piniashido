@@ -7,6 +7,7 @@ import { RouterLink } from 'vue-router';
 <template>
   <div>
     <div style="display: flex; justify-content: center;">
+      <RouterLink to="/usuario">usuario pinia</RouterLink>/
       <RouterLink to="/">cotadores</RouterLink>/
       <RouterLink to="/about">usuario</RouterLink>
     </div>
