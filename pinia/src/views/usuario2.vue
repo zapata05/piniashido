@@ -1,7 +1,7 @@
 <script setup>
 import {ref,computed} from 'vue'
-import {usedefineStore} from '@/stores/usuario2'
-const elpep = usedefineStore ()
+import {useCounterStore} from '@/stores/usuario2'
+const elpep = useCounterStore ()
 const numero = ref(0)
 const s = () =>{
     numero.value++
@@ -23,16 +23,16 @@ const resetear = () =>{
 <template>
     <div class="container">
         <div class="numero">
-            {{ elpep.numero }}
+            {{ elpep.Numero }}
         </div>
         <div class="botones">
-            <button @click="usar.res">-</button>
-            <button @click="usar.sum">+</button>
-            <button @click="resetear">resetear</button>
+            <button @click="elpep.res">-</button>
+            <button @click="elpep.sum">+</button>
+            <button @click="elpep.reset">resetear</button>
         </div>
         <hr>
         <div>
-            el numero es par o impar: {{ parimp }}
+            el numero es: {{elpep.parimpar }}
         </div>
     </div>
 </template>

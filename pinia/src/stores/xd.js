@@ -1,25 +1,23 @@
 import { defineStore } from "pinia";
 
-export const useCounterStore =defineStore({
-    id: 'contador',
-    state: () =>({
-        Numero : 0
+export const usedefinestore = defineStore ({
+id: 'numeros',
+    state: () => ({
+        Numero: 0
     }),
-    actions: {
+    action: {
         sum (){
             this.Numero++
         },
-        res (){
+        res(){
             this.Numero--
-        },
-        reset(){
-            this.Numero=0
-        },
+        }
     },
     getters:{
-        parimpar: (state) =>{
+        parimpa: (state) =>{
            if (state.Numero % 2 === 0) return 'par'
            return 'impar'
         }
     }
+   
 })
